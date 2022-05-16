@@ -2,11 +2,11 @@ import React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 import FontAewsome5 from 'react-native-vector-icons/FontAwesome5';
 
-const Header = (props) => {
+const Header = ({ name, onPress }) => {
     return (
         <View style={styles.headerView}>
-            <FontAewsome5 name={'bars'} size={28} color={'white'} style={styles.headerIcon} />
-            <Text style={styles.headerText}>{props.name}</Text>
+            <FontAewsome5 name={'bars'} size={28} color={'white'} style={styles.headerIcon} onPress={onPress} />
+            <Text style={styles.headerText}>{name}</Text>
         </View>
     );
 };

@@ -2,15 +2,15 @@ import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 import Header from '../components/Header';
 
-const HomeScreen = () => {
+const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Header name="Home" />
+            <Header name="Home" onPress={() => navigation.openDrawer()} />
             <ScrollView style={styles.scrollView}>
                 <Text style={styles.bodyTitle}>What is Stroke ?</Text>
                 <Text style={styles.bodyText}>A stroke is a serious life-threatening medical condition that happens when the blood supply to part of the brain is cut off. Strokes are a medical emergency and urgent treatment is essential. The sooner a person receives treatment for a stroke, the less damage is likely to happen.</Text>
 
-                <TouchableOpacity style={styles.btnView}>
+                <TouchableOpacity style={styles.btnView} onPress={() => navigation.navigate('Predict')}>
                     <Text style={styles.btnText}>Predict</Text>
                 </TouchableOpacity>
 
@@ -97,4 +97,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default HomeScreen;
+export default Home;
