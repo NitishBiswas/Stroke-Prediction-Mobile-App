@@ -10,7 +10,7 @@ const Home = ({ navigation }) => {
                 <Text style={styles.bodyTitle}>What is Stroke ?</Text>
                 <Text style={styles.bodyText}>A stroke is a serious life-threatening medical condition that happens when the blood supply to part of the brain is cut off. Strokes are a medical emergency and urgent treatment is essential. The sooner a person receives treatment for a stroke, the less damage is likely to happen.</Text>
 
-                <TouchableOpacity style={styles.btnView} onPress={() => navigation.navigate('Predict')}>
+                <TouchableOpacity style={styles.btnView} onPress={() => navigation.navigate('Predict Tool')}>
                     <Text style={styles.btnText}>Predict</Text>
                 </TouchableOpacity>
 
@@ -39,7 +39,7 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#070724',
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
         flex: 1
     },
     bodyTitle: {
@@ -66,11 +66,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderWidth: 1,
-        borderColor: 'white',
+        borderColor: '#33FF26',
         marginBottom: 20,
     },
     btnText: {
-        color: 'white',
+        color: '#33FF26',
         fontSize: 20,
         fontWeight: 'bold',
     },

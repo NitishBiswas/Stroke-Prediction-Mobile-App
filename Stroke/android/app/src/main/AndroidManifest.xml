@@ -2,6 +2,7 @@
   package="com.stroke">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
       android:name=".MainApplication"
@@ -23,4 +24,10 @@
         </intent-filter>
       </activity>
     </application>
+    <queries>
+   <intent>
+     <action android:name="android.intent.action.VIEW" />
+     <data android:mimeType="application/pdf" />
+   </intent>
+ </queries>
 </manifest>

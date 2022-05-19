@@ -1,7 +1,5 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
-import { View, Text, Image, StyleSheet, Linking } from 'react-native';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import {
     DrawerContentScrollView,
     DrawerItemList,
@@ -16,7 +14,7 @@ const CustomDrawer = props => {
                     <Image style={styles.imageView} source={require('../images/doctor2.png')} />
                     <Text style={styles.headerText}>Stroke Prediction</Text>
                 </View>
-                <View style={styles.middleView}>
+                <View>
                     <DrawerItemList {...props} />
                 </View>
             </DrawerContentScrollView>
@@ -33,8 +31,8 @@ const styles = StyleSheet.create({
     headerView: {
         height: 260,
         marginBottom: 20,
-        borderBottomColor: 'white',
-        borderBottomWidth: 0.5,
+        borderBottomColor: 'gray',
+        borderBottomWidth: 1,
     },
     imageView: {
         height: 200,
