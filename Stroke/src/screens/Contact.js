@@ -1,7 +1,6 @@
 // Contact us screen
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert, ScrollView, Linking } from 'react-native';
-import Entypo from 'react-native-vector-icons/Entypo';
 
 import Header from '../components/Header';
 
@@ -16,9 +15,8 @@ const Contact = ({ navigation }) => {
         if (name === '' || email === '' || message === '' || phone === '') {
             Alert.alert('Error', 'Please fill all the fields');
         } else {
-            Linking.openURL(`mailto:${email}?subject=${name}&body=${message}`)
+            Linking.openURL(`mailto:strokepredictionmachine@gmail.com?subject=${'Feedback from ' + name}&body=${message + '\n\n\n\n' + name + '\n\n' + email + '\n' + phone}`)
                 .then(() => {
-
                     Alert.alert('Success', 'Your message has been sent');
                     setName('');
                     setEmail('');
@@ -45,18 +43,23 @@ const Contact = ({ navigation }) => {
                     <Text style={styles.inputTitle}>Name</Text>
                     <TextInput style={styles.inputView} value={name} placeholder="Enter Your Name" onChangeText={(text) => setName(text)} placeholderTextColor="gray" />
                     {/* Name Input End */}
+
                     {/* Email Input Start */}
                     <Text style={styles.inputTitle}>Email</Text>
                     <TextInput style={styles.inputView} value={email} placeholder="Enter Your Email" onChangeText={(text) => setEmail(text)} placeholderTextColor="gray" keyboardType='email-address' />
                     {/* Email Input End */}
+
                     {/* Phone Input Start */}
                     <Text style={styles.inputTitle}>Phone</Text>
                     <TextInput style={styles.inputView} value={phone} placeholder="Enter Your Phone Number" onChangeText={(text) => setPhone(text)} placeholderTextColor="gray" keyboardType='number-pad' />
                     {/* Phone Input End */}
+
                     {/* Message Input Start */}
                     <Text style={styles.inputTitle}>Message</Text>
-                    <TextInput style={styles.inputView} value={message} placeholder="Enter Your Message" onChangeText={(text) => setMessage(text)} placeholderTextColor="gray" />
+                    <TextInput style={styles.inputView} value={message} placeholder="Enter Your Message" onChangeText={(text) => setMessage(text)} placeholderTextColor="gray" textAlignVertical='top' multiline={true}
+                        numberOfLines={3} />
                     {/* Message Input End */}
+
                     {/* Submit Button Start */}
                     <TouchableOpacity style={styles.btnView} onPress={() => sendMail()}>
                         <Text style={styles.btnText}>Submit</Text>

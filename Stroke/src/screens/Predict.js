@@ -8,8 +8,7 @@ import Header from '../components/Header';
 const Predict = ({ navigation }) => {
     //loading state
     const [loading, setLoading] = useState(false);
-    //modal state
-    const [modalVisible, setModalVisible] = useState(false);
+
 
     const [age, setAge] = useState('');
     const [glucose, setGlucose] = useState('');
