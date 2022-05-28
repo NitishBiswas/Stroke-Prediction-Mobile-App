@@ -34,7 +34,9 @@ const Contact = ({ navigation }) => {
             <Header name="Contact Us" onPress={() => navigation.openDrawer()} />
             <View style={styles.content}>
                 <Text style={styles.title}>Let's Get in Touch</Text>
-                <View style={styles.br} />
+                <View style={{ marginHorizontal: 50 }}>
+                    <View style={styles.br} />
+                </View>
                 <Text style={styles.text}>
                     If you have any questions or concerns, please feel free to contact us.
                 </Text>
@@ -79,7 +81,7 @@ const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        paddingHorizontal: 20,
+        // paddingHorizontal: 20,
     },
     title: {
         color: 'white',
@@ -118,7 +120,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     formView: {
-        marginHorizontal: 10,
         marginTop: 10,
     },
     btnView: {

@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView, ActivityIndicator, Modal, Alert } from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import config from '../../config';
 
 import Header from '../components/Header';
 
 const Predict = ({ navigation }) => {
     //loading state
     const [loading, setLoading] = useState(false);
-
 
     const [age, setAge] = useState('');
     const [glucose, setGlucose] = useState('');
@@ -113,7 +113,7 @@ const Predict = ({ navigation }) => {
             formData.append('glucose', glucose);
             formData.append('bmi', bmi);
             formData.append('smoking', smokingValue);
-            fetch('https://stroke-prediction-app-api.herokuapp.com/result', {
+            fetch(config.STROKE_PREDICTION_API, {
                 method: 'POST',
                 body: formData
             })
@@ -607,9 +607,6 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         color: '#fff',
         fontSize: 20,
-    },
-    formView: {
-        marginHorizontal: 10,
     },
     btnView: {
         height: 40,

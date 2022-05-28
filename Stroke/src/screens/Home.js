@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity, Image, ScrollView } from 'rea
 import Header from '../components/Header';
 
 const Home = ({ navigation }) => {
+
     return (
         <View style={styles.container}>
             <Header name="Home" onPress={() => navigation.openDrawer()} />

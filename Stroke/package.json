@@ -16,6 +16,7 @@
     "@react-navigation/native-stack": "^6.6.2",
     "react": "17.0.2",
     "react-native": "0.68.2",
+    "react-native-dotenv": "^3.3.1",
     "react-native-dropdown-picker": "^5.4.2",
     "react-native-file-viewer": "^2.1.5",
     "react-native-gesture-handler": "^2.4.2",
