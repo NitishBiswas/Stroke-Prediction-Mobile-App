@@ -19,6 +19,7 @@ import CustomDrawer from './src/screens/CustomDrawer';
 import PredictedResults from './src/screens/PredictedResults';
 import Result from './src/screens/Result';
 import Contact from './src/screens/Contact';
+import SplashScreen from './src/screens/SplashScreen';
 
 const drawer = createDrawerNavigator();
 const stack = createNativeStackNavigator();
@@ -32,11 +33,22 @@ const StackNavigator = () => {
   );
 }
 
+const HomeStack = createNativeStackNavigator();
+
+const HomeStackNavigator = () => {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
+      <HomeStack.Screen name="HomeSplash" component={Home} options={{ headerShown: false }} />
+    </HomeStack.Navigator>
+  );
+}
+
 
 const drawerNavigator = () => {
   return (
     <drawer.Navigator screenOptions={{ drawerInactiveTintColor: 'gray', drawerActiveTintColor: '#33FF26', drawerLabelStyle: { fontSize: 18, fontWeight: 'bold' } }} drawerContent={(props) => <CustomDrawer {...props} />}>
-      <drawer.Screen name="Home" component={Home}
+      <drawer.Screen name="Home" component={HomeStackNavigator}
         options={{
           headerShown: false,
           drawerIcon: ({ color }) => (
@@ -83,3 +95,14 @@ const App = () => {
 };
 
 export default App;
+
+// import React from 'react'
+// import SplashScreen from './src/screens/SplashScreen'
+
+// const App = () => {
+//   return (
+//     <SplashScreen />
+//   )
+// }
+
+// export default App
