@@ -1,5 +1,5 @@
-import { STROKE_PREDICTION_API } from '@env'
+import {API_URL} from '@env';
 
 export default {
-    STROKE_PREDICTION_API,
-}
+  API_URL,
+};
